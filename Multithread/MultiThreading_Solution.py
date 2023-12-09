@@ -65,11 +65,10 @@ def database_reader(conn, read_queue):
         conn.commit()
 
 
-# Connect to SQLite database
+
 conn = sqlite3.connect('detection_database.db', check_same_thread=False)
 cursor = conn.cursor()
 
-# Create a table named 'model_detection' with specified columns and data types
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS model_detection (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
